@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {
+  Header,
+  Footer,
+  About,
+  Testimonials,
+  Portfolio,
+  Contact,
+  Banner,
+  Resume,
+  Pricing,
+  Client,
+} from './components/index';
+import preloader from './assets/images/ober_logo.png';
+// import { Routes, Route } from 'react-router-dom';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="container-page">
+        <div className="preloader">
+          <div className="centrize full-width">
+            <div className="vertical-center">
+              <div className="spinner-logo">
+                <img src={preloader} alt="preloader" />
+                <div className="spinner-dot"></div>
+                <div className="spinner spinner-line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <Header />
+        <div className="wrapper">
+          <Banner />
+          <About />
+          <Resume />
+          <Portfolio />
+          <Pricing />
+          <Testimonials />
+          <Client />
+          <Contact />
+        </div>
+        <Footer />
+      </div>
+    </>
   );
-}
+};
 
 export default App;
